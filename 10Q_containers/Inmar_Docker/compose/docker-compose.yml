@@ -1,0 +1,17 @@
+version: '3'
+services:
+  vpronginx:
+    image: gopinadh/Inmarnginx
+    ports:
+      - "80:80"
+  vproapp:
+    image: gopinadh/Inmarapp
+    ports:
+      - "8080:8080"
+  vprodb:
+    image: gopinadh/Inmrdb
+    ports:
+      - "3306:3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=vprodbpass
+

@@ -1,0 +1,16 @@
+1. Write a program to reverse a string “abcdef” --> “fedcba”  (preferably NOT using inbuilt functions that come along with the libraries. We want to understand how you would think algorithm wise?
+
+Note : The below algorithm is written in cobol program not just for fixed or static values, it was written multiple values whenever it changes.
+
+COBOL:
+
+a. Read the variable using Inspect verb and "Length Off" by "-1" to new variable, this loop should read (-1) until the length is equal to actual length of the variable.
+b. Now read new variable for leading spaces using Inspect verb.
+c. Now SUB length of Input variable - length spaces countn from step 2, will gives us the actual length.
+d. Now use Reference Modification, we can get the actual length and we can display the same. 
+
+Python code using indexes:
+a='abcdef'
+print(a[::-1]):
+
+

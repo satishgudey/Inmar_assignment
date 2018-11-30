@@ -1,0 +1,31 @@
+.configure("2") do |config|
+
+  config.vm.box = "ubuntu/trusty64"
+  config.vm.network "public_network"
+  config.vm.synced_folder "ansible", "/root/ansible"
+  config.vm.provider "virtualbox" do |vb|
+        vb.memory = "1024"
+   end
+  
+  config.vm.provision "shell", inline: <<-SHELL
+  
+### provisioning 
+
+   sudo apt-get update
+   ##### ansible installation     
+    
+     sudo apt-get install software-properties-common
+     sudo apt-add-repository ppa:ansible/ansible
+     sudo apt-get update
+     sudo apt-get install ansible -y
+
+    ########## python boto installation 
+    sudo apt updateVagrant
+    sudo apt install python-minimal -y
+    sudo apt update
+    sudo apt install python-pip -y
+    sudo pip install boto3 
+    sudo pip install boto
+
+   SHELL
+end

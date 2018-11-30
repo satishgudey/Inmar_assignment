@@ -1,0 +1,21 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: Inmardb
+spec:
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: Inmardb
+    spec:
+      containers:
+      - name: Inmardb
+        image: gopinadh/Inmardb
+        ports:
+        - name: Inmardb-port
+          containerPort: 3306
+        env:
+         - name: MYSQL_ROOT_PASSWORD
+           value: "vprodbpass"
+
